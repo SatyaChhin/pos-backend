@@ -1,18 +1,17 @@
-const express = require("express"); // import express module
+const express = require("express");
 const cors = require("cors");
-const app = express(); //app extend
+const app = express(); 
 
-app.use(express.json()); // json body from client
+app.use(express.json()); 
 app.use(express.urlencoded({ extended: true }));
-app.use(cors({ origin: "*" })); // cors origin
+app.use(cors({ origin: "*" })); 
 
-const { category } = require("./src/route/category.route"); // import
-const { role } = require("./src/route/role.route");
-category(app); // calling function route
+const { category } = require("./src/routes/category.route"); 
+const { role } = require("./src/routes/role.route");
+category(app); 
 role(app);
 
 app.get("/", (req, res) => {
-  // init route
   res.send("Welcome API Node");
 });
 

@@ -1,9 +1,4 @@
-const {
-  getAll,
-  create,
-  update,
-  remove,
-} = require("../controller/category.controller");
+const { getAll, create, update, remove } = require("../controller/category.controller");
 const { validateCheck } = require("../config/service");
 const { body } = require("express-validator");
 
@@ -17,6 +12,7 @@ const category = (app) => {
   app.put("/api/category", validateData(), validateCheck, update);
   app.delete("/api/category", remove);
 };
+
 module.exports = {
   category,
 };

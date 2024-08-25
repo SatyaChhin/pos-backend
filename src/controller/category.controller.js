@@ -1,16 +1,16 @@
 const { db } = require("../config/db");
 const { logError } = require("../config/service");
+const categoryService = require('../services/categoryService');
 
 const getAll = async (req, res) => {
   try {
-    const [data] = await db.query("SELECT * FROM category");
-    const [role] = await db.query("SELECT * FROM role");
+    const { categories, roles } = await categoryService.getAllData();
     res.json({
-      list: data,
-      role: role,
+      list: categories,
+      role: roles,
     });
   } catch (err) {
-    logError("category.getAll", err, res);
+    logError('category.getAll', err, res);
   }
 };
 
@@ -19,7 +19,7 @@ const create = async (req, res) => {
     var sql =
       "INSERT INTO category (name,description,parent_id,status) VALUES (:name,:description,:parent_id,:status)";
     var param = {
-      name: req.body.name, // req.body == get data json type from client
+      name: req.body.name,
       description: req.body.description,
       parent_id: req.body.parent_id,
       status: req.body.sataus,
