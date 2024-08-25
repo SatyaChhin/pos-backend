@@ -1,0 +1,6 @@
+[25/08/2024 22:52:36] Error: Access denied for user ''@'localhost' (using password: NO)
+[25/08/2024 22:53:00] Error: Access denied for user ''@'localhost' (using password: NO)
+[25/08/2024 22:53:32] Error: Access denied for user ''@'localhost' (using password: NO)
+[25/08/2024 22:54:08] Error: Access denied for user ''@'localhost' (using password: NO)
+[25/08/2024 22:55:41] Error: Access denied for user ''@'localhost' (using password: NO)
+[25/08/2024 22:58:58] Error: Access denied for user 'root'@'localhost' (using password: NO)
