@@ -3,7 +3,8 @@ const moment = require("moment");
 const { validationResult } = require("express-validator");
 const logError = async (controller, message_error, res) => {
   try {
-    const timestamp = moment().format("DD/MM/YYYY HH:mm:ss"); // Use 'moment' for formatted timestamp
+    // Use 'moment' for formatted timestamp
+    const timestamp = moment().format("DD/MM/YYYY HH:mm:ss"); 
     const path = "./logs/" + controller + ".txt";
     const logMessage = "[" + timestamp + "] " + message_error + "\n";
     await fs.appendFile(path, logMessage);

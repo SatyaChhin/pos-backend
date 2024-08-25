@@ -1,4 +1,3 @@
-const { db } = require("../config/db");
 const { logError } = require("../config/service");
 const categoryService = require('../services/categoryService');
 
@@ -16,56 +15,35 @@ const getAll = async (req, res) => {
 
 const create = async (req, res) => {
   try {
-    var sql =
-      "INSERT INTO category (name,description,parent_id,status) VALUES (:name,:description,:parent_id,:status)";
-    var param = {
-      name: req.body.name,
-      description: req.body.description,
-      parent_id: req.body.parent_id,
-      status: req.body.sataus,
-    };
-    const [data] = await db.query(sql, param);
+    const data = await categoryService.createCategory(req.body);
     res.json({
       data: data,
     });
   } catch (err) {
-    logError("category.create", err, res);
+    logError('category.create', err, res);
   }
 };
 
 const update = async (req, res) => {
   try {
-    var sql =
-      "UPDATE category SET name=:name, description=:description, parent_id=:parent_id, status=:status WHERE id=:id";
-    var param = {
-      name: req.body.name,
-      description: req.body.description,
-      parent_id: req.body.parent_id,
-      status: req.body.status,
-      id: req.body.id,
-    };
-    const [data] = await db.query(sql, param);
+    const data = await categoryService.updateCategory(req.body);
     res.json({
       data: data,
     });
   } catch (err) {
-    logError("category.update", err, res);
+    logError('category.update', err, res);
   }
 };
 
 const remove = async (req, res) => {
   try {
-    var sql = "DELETE FROM category WHERE id=:id";
-    var param = {
-      id: req.body.id,
-    };
-    const [data] = await db.query(sql, param);
+    const data = await categoryService.deleteCategory(req.body.id);
     res.json({
       message: "Delete successfully!",
       data: data,
     });
   } catch (err) {
-    logError("category.remove", err, res);
+    logError('category.remove', err, res);
   }
 };
 
