@@ -1,0 +1,4 @@
+[13/08/2024 21:42:56] Error: Column 'name' cannot be null
+[13/08/2024 21:43:46] Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'INSERTSss INTO category (name,description,parent_id,status) VALUES ('Test fin...' at line 1
+[14/08/2024 18:26:51] Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'INSERTSss INTO category (name,description,parent_id,status) VALUES (NULL,'Des...' at line 1
+[15/08/2024 20:56:54] Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'INSERTSss INTO category (name,description,parent_id,status) VALUES ('Test107'...' at line 1
